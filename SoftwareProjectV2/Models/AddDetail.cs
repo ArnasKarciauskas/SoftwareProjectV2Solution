@@ -13,6 +13,14 @@ namespace SoftwareProjectV2.Models
         {
             _AddEquipments = new List<AddEquipment>();
         }
+
+        /*
+          Variables are using input validation on all fields to avoid injection of malicious
+          scripts and avoid user errors. Some variables are missing [Required] in cases of
+          it being an integer or date which is mandatory by default.           
+        */
+
+        //DetailId is used as a key in the generated DB hence the [Key] entry.
         [Key]
         public int DetailId {get;set;}
 
@@ -28,7 +36,7 @@ namespace SoftwareProjectV2.Models
         [Required]
         public string EmployeeSecondName { get; set; }
 
-
+        //Employee number.
         [Display(Name = "Employee Number:")]
         public int EmployeeNumber { get; set; }
 
@@ -54,7 +62,7 @@ namespace SoftwareProjectV2.Models
         [Display(Name = "Start Date:")]
         public DateTime EmployeeStartDate { get; set; }
 
-
+        //Add to a collection for use later when inputting data into DB.
         public virtual ICollection<AddEquipment> AddEquipments
         {
             get { return _AddEquipments; }

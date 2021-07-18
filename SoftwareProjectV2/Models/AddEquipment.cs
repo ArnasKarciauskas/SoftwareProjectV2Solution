@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace SoftwareProjectV2.Models
 {
+
+
     public class AddEquipment
     {
         private ICollection<AddDetail> _AddDetailsI;
@@ -13,7 +15,14 @@ namespace SoftwareProjectV2.Models
         {
             _AddDetailsI = new List<AddDetail>();
         }
-        //Key is automatically added to DB
+
+        /*
+          Variables are using input validation on all fields to avoid injection of malicious
+          scripts and avoid user errors. Some variables are missing [Required] in cases of
+          it being an integer or date which is mandatory by default.           
+        */
+
+        //EquipmentId is used as a key in the generated DB hence the [Key] entry.
         [Key]
         public int EquipmentId { get; set; }
 
@@ -42,6 +51,7 @@ namespace SoftwareProjectV2.Models
         [Display(Name = "Date assigned:")]
         public DateTime AssignedDate { get; set; }
 
+        //Add to a collection for use later when inputting data into DB.
         public virtual ICollection<AddDetail> _AddDetailsIC
         {
             get { return _AddDetailsIC; }

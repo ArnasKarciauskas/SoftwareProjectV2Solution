@@ -8,6 +8,14 @@ namespace SoftwareProjectV2.Models
 {
     public class Inventory
     {
+
+        /*
+          Variables are using input validation on all fields to avoid injection of malicious
+          scripts and avoid user errors. Some variables are missing [Required] in cases of
+          it being an integer or date which is mandatory by default.           
+        */
+
+        //InventoryId is used as a key in the generated DB hence the [Key] entry.
         [Key]
         public int InventoryId { get; set; }
 
