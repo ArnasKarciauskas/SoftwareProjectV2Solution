@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -18,13 +19,13 @@ namespace SoftwareProjectV2.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: Inventories
         public async Task<IActionResult> Index()
         {
             return View(await _context.Inventory.ToListAsync());
         }
-
+        [Authorize]
         // GET: Inventories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -42,7 +43,7 @@ namespace SoftwareProjectV2.Controllers
 
             return View(inventory);
         }
-
+        [Authorize]
         // GET: Inventories/Create
         public IActionResult Create()
         {
@@ -50,8 +51,6 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: Inventories/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("InventoryId,InvDeviceName,InvDeviceType,InvSerialNo,WarrantyExpiration")] Inventory inventory)
@@ -64,7 +63,7 @@ namespace SoftwareProjectV2.Controllers
             }
             return View(inventory);
         }
-
+        [Authorize]
         // GET: Inventories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -82,8 +81,6 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: Inventories/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("InventoryId,InvDeviceName,InvDeviceType,InvSerialNo,WarrantyExpiration")] Inventory inventory)

@@ -19,7 +19,7 @@ namespace SoftwareProjectV2.Controllers
         {
             _context = context;
         }
-
+        [Authorize]
         // GET: AddDetails
         public async Task<IActionResult> Index()
         {
@@ -51,8 +51,6 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddDetails/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DetailId,EmployeeName,EmployeeSecondName,EmployeeNumber,EmployeePPS,Email,Mobile,EmployeeStartDate")] AddDetail addDetail)
@@ -84,8 +82,6 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddDetails/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("DetailId,EmployeeName,EmployeeSecondName,EmployeeNumber,EmployeePPS,Email,Mobile,EmployeeStartDate")] AddDetail addDetail)
@@ -117,7 +113,7 @@ namespace SoftwareProjectV2.Controllers
             }
             return View(addDetail);
         }
-
+        [Authorize]
         // GET: AddDetails/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -137,7 +133,6 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddDetails/Delete/5
-        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -3,5 +3,22 @@
     ViewData["Title"] = "Menu";
 }
 
-<h1>Menu</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h5><a asp-controller="Home" asp-action="Index"> <input type="button" class="btn btn-dark btn-block" value="Home page" /></a></h5>
+            <h5><a asp-controller="Home" asp-action="Privacy"> <input type="button" class="btn btn-dark btn-block" value="Privacy" /></a></h5>
+            <hr />
+            <h5><a asp-controller="AddDetails" asp-action="Index"> <input type="button" class="btn btn-dark btn-block" value="Employee details home" /></a></h5>
+            <h5><a asp-controller="AddDetails" asp-action="Create"> <input type="button" class="btn btn-dark btn-block" value="Add employee" /></a></h5>
+            <hr />
+            <h5><a asp-controller="AddEquipments" asp-action="Index"> <input type="button" class="btn btn-dark btn-block" value="Assigned device home" /></a></h5>
+            <h5><a asp-controller="AddEquipments" asp-action="Create"> <input type="button" class="btn btn-dark btn-block" value="Assign device" /></a></h5>
+            <hr />
+            <h5><a asp-controller="Inventories" asp-action="Index"> <input type="button" class="btn btn-dark btn-block" value="Inventory home" /></a></h5>
+            <h5><a asp-controller="Inventories" asp-action="Create"> <input type="button" class="btn btn-dark btn-block" value="Add to inventory" /></a></h5>
+            <hr />
+        </div>
+    </div>
+</div>
 
