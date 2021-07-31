@@ -22,7 +22,7 @@ namespace SoftwareProjectV2.Models
         //Device name
         [Display(Name = "Device Name:")]
         [Required]
-        [StringLength(20, MinimumLength = 1, ErrorMessage = "Device name must not exceed 20 characters and cannot be empty.")]
+        [StringLength(30, MinimumLength = 1, ErrorMessage = "Device name must not exceed 20 characters and cannot be empty.")]
         public string InvDeviceName { get; set; }
 
         //Device type
