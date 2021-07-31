@@ -19,14 +19,14 @@ namespace SoftwareProjectV2.Controllers
         {
             _context = context;
         }
-        [Authorize]
         // GET: AddEquipments
+        [Authorize]
         public async Task<IActionResult> Index()
         {
             return View(await _context.AddEquipment.ToListAsync());
         }
-        [Authorize]
         // GET: AddEquipments/Details/5
+        [Authorize]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,14 +43,15 @@ namespace SoftwareProjectV2.Controllers
 
             return View(addEquipment);
         }
-        [Authorize]
         // GET: AddEquipments/Create
+        [Authorize]
         public IActionResult Create()
         {
             return View();
         }
 
         // POST: AddEquipments/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("EquipmentId,DeviceName,DeviceType,SerialNo,AssignedTo,AssignedDate")] AddEquipment addEquipment)
@@ -65,6 +66,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // GET: AddEquipments/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,6 +83,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddEquipments/Edit/5
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("EquipmentId,DeviceName,DeviceType,SerialNo,AssignedTo,AssignedDate")] AddEquipment addEquipment)
@@ -112,8 +115,8 @@ namespace SoftwareProjectV2.Controllers
             }
             return View(addEquipment);
         }
-
         // GET: AddEquipments/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,6 +135,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddEquipments/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

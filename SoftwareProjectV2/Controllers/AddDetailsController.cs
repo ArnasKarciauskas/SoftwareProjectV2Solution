@@ -25,7 +25,7 @@ namespace SoftwareProjectV2.Controllers
         {
             return View(await _context.AddDetail.ToListAsync());
         }
-
+        [Authorize]
         // GET: AddDetails/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -51,6 +51,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddDetails/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("DetailId,EmployeeName,EmployeeSecondName,EmployeeNumber,EmployeePPS,Email,Mobile,EmployeeStartDate")] AddDetail addDetail)
@@ -82,6 +83,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddDetails/Edit/5
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("DetailId,EmployeeName,EmployeeSecondName,EmployeeNumber,EmployeePPS,Email,Mobile,EmployeeStartDate")] AddDetail addDetail)
@@ -133,6 +135,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: AddDetails/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

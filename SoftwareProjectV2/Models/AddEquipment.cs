@@ -10,11 +10,6 @@ namespace SoftwareProjectV2.Models
 
     public class AddEquipment
     {
-        private ICollection<AddDetail> _AddDetailsI;
-        public AddEquipment()
-        {
-            _AddDetailsI = new List<AddDetail>();
-        }
 
         /*
           Variables are using input validation on all fields to avoid injection of malicious
@@ -54,11 +49,5 @@ namespace SoftwareProjectV2.Models
         [Display(Name = "Date assigned:")]
         public DateTime AssignedDate { get; set; }
 
-        //Add to a collection for use later when inputting data into DB.
-        public virtual ICollection<AddDetail> _AddDetailsIC
-        {
-            get { return _AddDetailsIC; }
-            set { _AddDetailsIC = value; }
-        }
     }
 }

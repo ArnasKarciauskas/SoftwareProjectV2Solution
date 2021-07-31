@@ -51,6 +51,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: Inventories/Create
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("InventoryId,InvDeviceName,InvDeviceType,InvSerialNo,WarrantyExpiration")] Inventory inventory)
@@ -81,6 +82,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: Inventories/Edit/5
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("InventoryId,InvDeviceName,InvDeviceType,InvSerialNo,WarrantyExpiration")] Inventory inventory)
@@ -114,6 +116,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // GET: Inventories/Delete/5
+        [Authorize]
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -132,6 +135,7 @@ namespace SoftwareProjectV2.Controllers
         }
 
         // POST: Inventories/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
