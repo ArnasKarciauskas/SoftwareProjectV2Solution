@@ -26,18 +26,19 @@ namespace SoftwareProjectV2.Models
 
         //Employee first name
         [Display(Name = "Employee Name:")]
-        [StringLength(20, MinimumLength = 1, ErrorMessage = "Name must be between 1 and 20 characters.")]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "Name must be between 1 and 20 characters and cannot be empty.")]
         [Required]
         public string EmployeeName { get; set; }
 
         //Employee second name
         [Display(Name = "Employee Second Name:")]
-        [StringLength(30, MinimumLength = 1, ErrorMessage = "Second Name must be between 1 and 30 characters.")]
+        [StringLength(30, MinimumLength = 1, ErrorMessage = "Second Name must be between 1 and 30 characters and cannot be empty.")]
         [Required]
         public string EmployeeSecondName { get; set; }
 
         //Employee number.
         [Display(Name = "Employee Number:")]
+        [Range(10000000, 99999999, ErrorMessage = "Employee numbers must contain 8 numbers.")]
         public int EmployeeNumber { get; set; }
 
         //PPS

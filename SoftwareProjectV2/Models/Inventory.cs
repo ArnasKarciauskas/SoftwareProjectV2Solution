@@ -22,11 +22,13 @@ namespace SoftwareProjectV2.Models
         //Device name
         [Display(Name = "Device Name:")]
         [Required]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "Device name must not exceed 20 characters and cannot be empty.")]
         public string InvDeviceName { get; set; }
 
         //Device type
         [Display(Name = "Device Type:")]
         [Required]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "Device type must not exceed 20 characters and cannot be empty.")]
         public string InvDeviceType { get; set; }
 
         //Device serial number

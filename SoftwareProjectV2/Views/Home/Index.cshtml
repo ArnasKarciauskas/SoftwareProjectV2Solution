@@ -5,17 +5,11 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-12">
             <h5>Description:</h5>
             <p>You can use this web application to store employee details, assign IT equipment to employees to monitor inventory usage and also use it as configuration management database.</p>
 
             <p>Only signed in accounts are permitted to make changes therefore accounts creation is mandatory. Users can also setup two factor authenticaiton to sign in to their accounts. If you are signed out and try to make changes to the database, you will be redirected to a sign in page.</p>
-        </div>
-
-        <div class="col-md-6">
-            <h5><a asp-controller="AddDetails" asp-action="Create"> <input type="button" class="btn btn-dark" value="Add employee" /></a></h5>
-            <h5><a asp-controller="AddEquipments" asp-action="Create"> <input type="button" class="btn btn-dark" value="Assign device" /></a></h5>
-            <h5><a asp-controller="Inventories" asp-action="Create"> <input type="button" class="btn btn-dark" value="Add to inventory" /></a></h5>
         </div>
     </div>
 </div>

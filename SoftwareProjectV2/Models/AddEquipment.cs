@@ -29,11 +29,13 @@ namespace SoftwareProjectV2.Models
         //Device name
         [Display(Name = "Device Name:")]
         [Required]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "Device name must not exceed 20 characters")]
         public string DeviceName { get; set; }
 
         //Device type
         [Display(Name = "Device Type:")]
         [Required]
+        [StringLength(20, MinimumLength = 1, ErrorMessage = "Device type must not exceed 20 characters")]
         public string DeviceType { get; set; }
 
         //Ints are required by default
@@ -45,6 +47,7 @@ namespace SoftwareProjectV2.Models
 
 
         [Display(Name = "Assigned To: (Employee No)")]
+        [Range(10000000, 99999999, ErrorMessage = "Employee numbers must contain 8 numbers.")]
         public int AssignedTo { get; set; }
 
         //Date
